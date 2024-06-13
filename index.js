@@ -19,11 +19,13 @@ const PORT = process.env.PORT || 5001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
-const corsOption = {
+
+const corsOptions = {
     origin: 'http://localhost:3000',
-    credentials: true
+    credentials: true, // Allow credentials (cookies)
 };
-app.use(cors(corsOption));
+
+app.use(cors(corsOptions));
 
 //routes
 // http://localhost:8080/api/v1/user/register
